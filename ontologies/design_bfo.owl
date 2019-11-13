@@ -1,0 +1,2021 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.ohio.edu/ontologies/design#"
+     xml:base="http://www.ohio.edu/ontologies/design"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:CommonCoreOntologies="http://www.ontologyrepository.com/CommonCoreOntologies/"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://www.ohio.edu/ontologies/design"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/alternative_label -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/alternative_label"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#describes_map_for -->
+
+    <owl:ObjectProperty rdf:about="http://www.ohio.edu/ontologies/design#describes_map_for">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/describes"/>
+        <rdfs:domain rdf:resource="http://www.ohio.edu/ontologies/design#MappingInformationContentEntity"/>
+        <rdfs:range rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/RepresentationalInformationContentEntity"/>
+        <rdfs:label>describes map for</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#describes_map_with -->
+
+    <owl:ObjectProperty rdf:about="http://www.ohio.edu/ontologies/design#describes_map_with">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/describes"/>
+        <rdfs:domain rdf:resource="http://www.ohio.edu/ontologies/design#MappingInformationContentEntity"/>
+        <rdfs:range rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/RepresentationalInformationContentEntity"/>
+        <rdfs:label>describes map with</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#uses_representation_type -->
+
+    <owl:ObjectProperty rdf:about="http://www.ohio.edu/ontologies/design#uses_representation_type">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/bearer_of"/>
+        <rdfs:domain rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/InformationBearingEntity"/>
+        <rdfs:range rdf:resource="http://www.ohio.edu/ontologies/design#SpecificationInformationContentEntity"/>
+        <rdfs:label>uses representation type</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/bearer_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/bearer_of"/>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/describes -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/describes"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000009 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000009"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000018 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000018"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000019 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000019"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000024 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000024"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000026 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000026"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000028 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000028"/>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#AngleRepresentation -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#AngleRepresentation">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#QualityRepresentation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#AngleSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#AngleSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#QualitySpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#AngularDimension -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#AngularDimension">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#DimensionSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#AngularitySpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#AngularitySpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#GeometricToleranceWithDatumReferenceSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#ArtifactRepresentation -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#ArtifactRepresentation">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#Representation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#ArtifactSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#ArtifactSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#SpecificationInformationContentEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#Assembly -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#Assembly">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Artifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#AssemblyComponentAssociation -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#AssemblyComponentAssociation">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#MeronomicalMappingInformationContentEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#AssemblyDesignDocument -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#AssemblyDesignDocument">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#DesignDocument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#AssemblyISpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#AssemblyISpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#ArtifactSpecification"/>
+        <owl:disjointWith rdf:resource="http://www.ohio.edu/ontologies/design#ComponentSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#AssemblyRepresentation -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#AssemblyRepresentation">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#ArtifactRepresentation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#AxisPoint -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#AxisPoint">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#LocationSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#BallEndSlotSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#BallEndSlotSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#SlotSpecfication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#Boss -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#Boss">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#DesignFeature"/>
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#FormFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#BottomDistanceSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#BottomDistanceSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#DepthSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#CADRepresentationType -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#CADRepresentationType">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#SpecificationInformationContentEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#Chamfer -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#Chamfer">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#TransitionFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#CircularBoss -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#CircularBoss">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#Boss"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#CircularCone -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#CircularCone">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#Cone"/>
+        <owl:disjointWith rdf:resource="http://www.ohio.edu/ontologies/design#ObliqueCicularCone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#CircularEdge -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#CircularEdge">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#Edge"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#CircularRunoutSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#CircularRunoutSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#GeometricToleranceWithDatumReferenceSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#CoaxilitySpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#CoaxilitySpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#GeometricToleranceWithDatumReferenceSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#Component -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#Component">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Artifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#ComponentPartMap -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#ComponentPartMap">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#MeronomicalMappingInformationContentEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#ComponentRepresentation -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#ComponentRepresentation">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#ArtifactRepresentation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#ComponentSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#ComponentSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#ArtifactSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#CompoundFeature -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#CompoundFeature">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#DesignFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#ConcentricitySpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#ConcentricitySpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#GeometricToleranceWithDatumReferenceSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#Cone -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#Cone">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#Solid"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#CornerRadius -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#CornerRadius">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#RadialSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#CounterboreDiameterSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#CounterboreDiameterSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#RadialSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#CounterboreHoleSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#CounterboreHoleSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#HoleSpecification"/>
+        <owl:disjointWith rdf:resource="http://www.ohio.edu/ontologies/design#CountersunkHoleSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#CountersunkAngleSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#CountersunkAngleSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#AngleSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#CountersunkDiameterSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#CountersunkDiameterSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#RadialSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#CountersunkHoleSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#CountersunkHoleSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#HoleSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#Cube -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#Cube">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#PolyHedron"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#Cylinder -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#Cylinder">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#Solid"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#CylindricalPocketSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#CylindricalPocketSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#PocketSpecification"/>
+        <owl:disjointWith rdf:resource="http://www.ohio.edu/ontologies/design#RectangularPocketSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#CylindricitySpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#CylindricitySpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#GeometricToleranceSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#DepthRepresentation -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#DepthRepresentation">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#QualityRepresentation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#DepthSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#DepthSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#LinearSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#DesignDocument -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#DesignDocument">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/InformationBearingArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#DesignFeature -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#DesignFeature">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#FeatureModel"/>
+        <rdfs:label>Design Feature</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#Diagonal -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#Diagonal">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#Knurl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#DiameterSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#DiameterSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#RadialSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#Diamond -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#Diamond">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#Knurl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#DimensionSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#DimensionSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#SpecificationInformationContentEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#DimensionTOleranceMap -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#DimensionTOleranceMap">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#DimensionToleranceMappingInformationContentEntity"/>
+        <owl:disjointWith rdf:resource="http://www.ohio.edu/ontologies/design#FeatureQualityDimensionMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#DimensionToleranceMappingInformationContentEntity -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#DimensionToleranceMappingInformationContentEntity">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#MappingInformationContentEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#DistanceRepresentation -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#DistanceRepresentation">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#QualityRepresentation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#Dodecahedron -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#Dodecahedron">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#PolyHedron"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#DoveTailSlotSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#DoveTailSlotSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#SlotSpecfication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#Edge -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#Edge">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000026"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#EdgeRepresentation -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#EdgeRepresentation">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#GeometricalRepresentation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#EdgeRound -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#EdgeRound">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#TransitionFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#EdgeSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#EdgeSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#GeometricalEntitySpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#EdgeVertexMap -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#EdgeVertexMap">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#TopologicalMappingInformationContentEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#FaceLoopMap -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#FaceLoopMap">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#TopologicalMappingInformationContentEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#FeatureModel -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#FeatureModel">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ArtifactModel"/>
+        <CommonCoreOntologies:alternative_label>Feature Design</CommonCoreOntologies:alternative_label>
+        <rdfs:label>Feature Model</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#FeatureQualityDimensionMap -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#FeatureQualityDimensionMap">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#DimensionToleranceMappingInformationContentEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#FeatureQualityMap -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#FeatureQualityMap">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#FormFeatureMappingInformationContentEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#FeatureRepresentation -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#FeatureRepresentation">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#FiatObjectRepresentation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#FeatureSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#FeatureSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#FiatObjectSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#FeatureToleranceMap -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#FeatureToleranceMap">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#FormFeatureMappingInformationContentEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#FiatObjectRepresentation -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#FiatObjectRepresentation">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#Representation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#FiatObjectSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#FiatObjectSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#SpecificationInformationContentEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#Fillet -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#Fillet">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#TransitionFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#FlatFace -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#FlatFace">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#DesignFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#FlatnessSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#FlatnessSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#GeometricToleranceSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#FloorRadiusSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#FloorRadiusSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#RadialSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#FormFeature -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#FormFeature">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#FormFeatureMappingInformationContentEntity -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#FormFeatureMappingInformationContentEntity">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#MappingInformationContentEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#Gear -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#Gear">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#DesignFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#GeneralBoss -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#GeneralBoss">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#Boss"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#GeneralSlotSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#GeneralSlotSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#SlotSpecfication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#GeometricToleranceSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#GeometricToleranceSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#ToleranceSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#GeometricToleranceWithDatumReferenceSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#GeometricToleranceWithDatumReferenceSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#ToleranceSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#GeometricalEntitySpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#GeometricalEntitySpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#SpecificationInformationContentEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#GeometricalRepresentation -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#GeometricalRepresentation">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#Representation"/>
+        <CommonCoreOntologies:alternative_label>Structural Representation</CommonCoreOntologies:alternative_label>
+        <rdfs:label>Geometrical Representation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#HeightRepresentation -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#HeightRepresentation">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#QualityRepresentation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#Helical -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#Helical">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#Teeth"/>
+        <owl:disjointWith rdf:resource="http://www.ohio.edu/ontologies/design#Spur"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#HelicalEdge -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#HelicalEdge">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#Edge"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#Hole -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#Hole">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#FormFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#HoleDirectionSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#HoleDirectionSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#OrientationSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#HoleRepresentation -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#HoleRepresentation">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#FeatureRepresentation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#HoleSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#HoleSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#FeatureSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#InnerShell -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#InnerShell">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#Shell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#Knurl -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#Knurl">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#FormFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#LabelBearingEntity -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#LabelBearingEntity">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/InformationBearingEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#LengthRepresentation -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#LengthRepresentation">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#QualityRepresentation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#LengthSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#LengthSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#LinearSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#LineProfileSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#LineProfileSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#GeometricToleranceSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#LinearDimension -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#LinearDimension">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#DimensionSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#LinearEdge -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#LinearEdge">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#Edge"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#LinearSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#LinearSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#QualitySpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#LocationSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#LocationSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#QualitySpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#MappingInformationContentEntity -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#MappingInformationContentEntity">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/RepresentationalInformationContentEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#Marking -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#Marking">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#DesignFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#MeasurementBearingEntity -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#MeasurementBearingEntity">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/InformationBearingEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#MeronomicalMappingInformationContentEntity -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#MeronomicalMappingInformationContentEntity">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#MappingInformationContentEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#NXCADRepresentationType -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#NXCADRepresentationType">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#CADRepresentationType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#NegativeSweepLengthSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#NegativeSweepLengthSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#LengthSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#NegativeToleranceSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#NegativeToleranceSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#ToleranceSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#NormalSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#NormalSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#OrientationSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#Oblate -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#Oblate">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#Spheroid"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#ObliqueCicularCone -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#ObliqueCicularCone">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#Cone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#ObliqueCylinder -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#ObliqueCylinder">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#Cylinder"/>
+        <owl:disjointWith rdf:resource="http://www.ohio.edu/ontologies/design#RightCylinder"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#Octahedron -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#Octahedron">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#PolyHedron"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#OrientationSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#OrientationSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#QualitySpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#OuterRound -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#OuterRound">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#DesignFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#OuterShell -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#OuterShell">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#Shell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#OutsideProfile -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#OutsideProfile">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#DesignFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#ParabolicEdge -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#ParabolicEdge">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#Edge"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#ParallelismSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#ParallelismSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#GeometricToleranceWithDatumReferenceSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#PartAssociation -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#PartAssociation">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#MeronomicalMappingInformationContentEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#PartDesignDocument -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#PartDesignDocument">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#DesignDocument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#PartFeatureMap -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#PartFeatureMap">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#FormFeatureMappingInformationContentEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#PartModel -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#PartModel">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ArtifactModel"/>
+        <CommonCoreOntologies:alternative_label>Part Design</CommonCoreOntologies:alternative_label>
+        <rdfs:label>Part Model</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#PartSolidMap -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#PartSolidMap">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#TopologicalMappingInformationContentEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#PartSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#PartSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#ArtifactSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#PerpendicularitySpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#PerpendicularitySpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#GeometricToleranceWithDatumReferenceSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#PlanarFace -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#PlanarFace">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#FormFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#PocketPoint -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#PocketPoint">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#LocationSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#PocketRepresentation -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#PocketRepresentation">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#FeatureRepresentation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#PocketSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#PocketSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#FeatureSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#PointRepresentation -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#PointRepresentation">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#GeometricalRepresentation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#PolyHedron -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#PolyHedron">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#Solid"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#PositiveSweepLengthSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#PositiveSweepLengthSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#LengthSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#PositiveToleranceSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#PositiveToleranceSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#ToleranceSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#ProductDesignDocument -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#ProductDesignDocument">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#DesignDocument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#ProductModel -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#ProductModel">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ArtifactModel"/>
+        <CommonCoreOntologies:alternative_label>Product Design</CommonCoreOntologies:alternative_label>
+        <rdfs:label>Product Model</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#ProductRepresentation -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#ProductRepresentation">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#ArtifactRepresentation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#Profile -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#Profile">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#FormFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#ProfileOfLineSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#ProfileOfLineSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#ToleranceSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#Prolate -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#Prolate">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#Spheroid"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#Protrusion -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#Protrusion">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#DesignFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#QualityRepresentation -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#QualityRepresentation">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#QualityRepresentation"/>
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#Representation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#QualitySpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#QualitySpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#SpecificationInformationContentEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#RadialDimension -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#RadialDimension">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#DimensionSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#RadialSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#RadialSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#QualitySpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#RadiusRepresentation -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#RadiusRepresentation">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#QualityRepresentation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#RadiusSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#RadiusSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#RadialSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#RectangularBoss -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#RectangularBoss">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#Boss"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#RectangularPocketSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#RectangularPocketSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#PocketSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#RemovalVolume -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#RemovalVolume">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#DesignFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#ReplicateFeature -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#ReplicateFeature">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#DesignFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#Representation -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#Representation">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#RevolvedProfile -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#RevolvedProfile">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#DesignFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#Rib -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#Rib">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#FormFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#RibTop -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#RibTop">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#DesignFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#RightCylinder -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#RightCylinder">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#Cylinder"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#RoundHole -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#RoundHole">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#DesignFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#RoundedEnd -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#RoundedEnd">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#DesignFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#RoundnessSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#RoundnessSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#GeometricToleranceSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#RunoutSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#RunoutSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#ToleranceSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#STEPRepresentationType -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#STEPRepresentationType">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#CADRepresentationType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#Shell -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#Shell">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000028"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#SlotPointSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#SlotPointSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#LocationSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#SlotRepresentation -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#SlotRepresentation">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#FeatureRepresentation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#SlotSpecfication -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#SlotSpecfication">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#FeatureSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#Solid -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#Solid">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000028"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#SolidRepresentation -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#SolidRepresentation">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#GeometricalRepresentation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#SolidShellMap -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#SolidShellMap">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#TopologicalMappingInformationContentEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#SolidSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#SolidSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#GeometricalEntitySpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#SolidSurfaceMap -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#SolidSurfaceMap">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#TopologicalMappingInformationContentEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#SolidWorKCADRepresentationType -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#SolidWorKCADRepresentationType">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#CADRepresentationType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#SpecificationInformationContentEntity -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#SpecificationInformationContentEntity">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/RepresentationalInformationContentEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#Sphere -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#Sphere">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#Spheroid"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#SphericalCap -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#SphericalCap">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#DesignFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#Spheroid -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#Spheroid">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#Solid"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#Spur -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#Spur">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#Teeth"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#Step -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#Step">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#DesignFeature"/>
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#TransitionFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#StraightnessSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#StraightnessSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#GeometricToleranceSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#Surface -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#Surface">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000009"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#SurfaceEdgeMap -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#SurfaceEdgeMap">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#TopologicalMappingInformationContentEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#SurfaceProfileSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#SurfaceProfileSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#GeometricToleranceSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#SurfaceRepresentation -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#SurfaceRepresentation">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#GeometricalRepresentation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#SurfaceSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#SurfaceSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#GeometricalEntitySpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#SymmetrySpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#SymmetrySpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#GeometricToleranceWithDatumReferenceSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#TSlotSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#TSlotSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#SlotSpecfication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#TaperAngleSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#TaperAngleSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#AngleSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#Teeth -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#Teeth">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#FormFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#Tetrahedron -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#Tetrahedron">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#PolyHedron"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#Thread -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#Thread">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#DesignFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#TipAngleSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#TipAngleSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#AngleSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#ToleranceRepresentation -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#ToleranceRepresentation">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#QualityRepresentation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#ToleranceSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#ToleranceSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#SpecificationInformationContentEntity"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/QualitySpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#TopologicalMappingInformationContentEntity -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#TopologicalMappingInformationContentEntity">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#MappingInformationContentEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#TotalRunoutSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#TotalRunoutSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#GeometricToleranceWithDatumReferenceSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#TransitionFeature -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#TransitionFeature">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#FormFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#TruePositionSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#TruePositionSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#GeometricToleranceSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#TurnedKnurl -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#TurnedKnurl">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#DesignFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#TypeBearingEntity -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#TypeBearingEntity">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/InformationBearingEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#USlotSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#USlotSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#SlotSpecfication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#Vertex -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#Vertex">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000018"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#VertexSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#VertexSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#GeometricalEntitySpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#WidthSpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#WidthSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#LinearSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#icosahedron -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#icosahedron">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#PolyHedron"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/Artifact -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Artifact"/>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/ArtifactModel -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/ArtifactModel"/>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/InformationBearingArtifact -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/InformationBearingArtifact"/>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/InformationBearingEntity -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/InformationBearingEntity"/>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/QualitySpecification -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/QualitySpecification"/>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/RepresentationalInformationContentEntity -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/RepresentationalInformationContentEntity"/>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/Straight -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Straight">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#Knurl"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#AngleRepresentation"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#DepthRepresentation"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#DistanceRepresentation"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#HeightRepresentation"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#LengthRepresentation"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#RadiusRepresentation"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#AngleSpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#LinearSpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#RadialSpecification"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#AngularDimension"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#LinearDimension"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#RadialDimension"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#AngularitySpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#CircularRunoutSpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#CoaxilitySpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#ConcentricitySpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#ParallelismSpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#PerpendicularitySpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#SymmetrySpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#TotalRunoutSpecification"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#ArtifactSpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#CADRepresentationType"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#DimensionSpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#FiatObjectSpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#GeometricalEntitySpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#QualitySpecification"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#ArtifactSpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#CADRepresentationType"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#DimensionSpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#FiatObjectSpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#GeometricalEntitySpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#QualitySpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#ToleranceSpecification"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#ArtifactSpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#CADRepresentationType"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#FiatObjectSpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#GeometricalEntitySpecification"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#AssemblyDesignDocument"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#PartDesignDocument"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#ProductDesignDocument"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#BallEndSlotSpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#DoveTailSlotSpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#GeneralSlotSpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#TSlotSpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#USlotSpecification"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#Chamfer"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#EdgeRound"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#Fillet"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#Step"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#CircularBoss"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#GeneralBoss"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#RectangularBoss"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#Cone"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#Cylinder"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#PolyHedron"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#Spheroid"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#CornerRadius"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#CounterboreDiameterSpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#CountersunkDiameterSpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#FloorRadiusSpecification"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#CountersunkAngleSpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#TaperAngleSpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#TipAngleSpecification"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#Cube"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#Dodecahedron"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#Octahedron"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#Tetrahedron"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#icosahedron"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#CylindricitySpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#FlatnessSpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#LineProfileSpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#RoundnessSpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#StraightnessSpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#SurfaceProfileSpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#TruePositionSpecification"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#DepthSpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#LengthSpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#WidthSpecification"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#Diagonal"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#Diamond"/>
+            <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Straight"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#DimensionToleranceMappingInformationContentEntity"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#FormFeatureMappingInformationContentEntity"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#MeronomicalMappingInformationContentEntity"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#TopologicalMappingInformationContentEntity"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#EdgeSpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#SolidSpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#SurfaceSpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#VertexSpecification"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#EdgeVertexMap"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#FaceLoopMap"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#SolidShellMap"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#SolidSurfaceMap"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#SurfaceEdgeMap"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#HoleRepresentation"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#PocketRepresentation"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#SlotRepresentation"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#HoleSpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#PocketSpecification"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#SlotSpecfication"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#Oblate"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#Prolate"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#Sphere"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+
