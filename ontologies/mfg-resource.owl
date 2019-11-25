@@ -18,6 +18,35 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000115 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000600 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000600"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000602 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000602"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Object Properties
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -31,6 +60,8 @@
     <owl:ObjectProperty rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#demarcatedBy">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#demarcates"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000034"/>
+        <rdfs:range rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#capability"/>
     </owl:ObjectProperty>
     
 
@@ -39,6 +70,10 @@
 
     <owl:ObjectProperty rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#demarcates">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#capability"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000034"/>
+        <obo:IAO_0000602 xml:lang="en">forall c f (demarcates(c,f) implies Function(f) and Capability(c) and exists p o (process(p) and realizes(p,f) and inheres_in(f, o) and inheres_in(c,o) and participate_in(o,p)))</obo:IAO_0000602>
+        <rdfs:label xml:lang="en">demarcates</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -221,14 +256,6 @@
     
 
 
-    <!-- http://www.ohio.edu/ontologies/manufacturing-capability#ArtifactFunction -->
-
-    <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#ArtifactFunction">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000034"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.ohio.edu/ontologies/manufacturing-capability#AxisControlingFunction -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#AxisControlingFunction">
@@ -290,7 +317,7 @@
     <!-- http://www.ohio.edu/ontologies/manufacturing-capability#Broaching -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#Broaching">
-        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#ManufacturingProcess"/>
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#MachiningProcess"/>
     </owl:Class>
     
 
@@ -504,7 +531,7 @@
     <!-- http://www.ohio.edu/ontologies/manufacturing-capability#Drilling -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#Drilling">
-        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#ManufacturingProcess"/>
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#MachiningProcess"/>
     </owl:Class>
     
 
@@ -576,14 +603,6 @@
     
 
 
-    <!-- http://www.ohio.edu/ontologies/manufacturing-capability#EndDrillingFunction -->
-
-    <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#EndDrillingFunction">
-        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#HoleMaking"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.ohio.edu/ontologies/manufacturing-capability#EndMilling -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#EndMilling">
@@ -626,24 +645,6 @@
     <!-- http://www.ohio.edu/ontologies/manufacturing-capability#EndMillingRoghingTool -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#EndMillingRoghingTool">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/bearer_of"/>
-                        <owl:someValuesFrom rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#EndDrillingFunction"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/bearer_of"/>
-                        <owl:someValuesFrom rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#Plunging"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/bearer_of"/>
-                        <owl:someValuesFrom rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#PocketMakingFunction"/>
-                    </owl:Restriction>
-                </owl:unionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#MillingTool"/>
     </owl:Class>
     
@@ -827,23 +828,9 @@
     
 
 
-    <!-- http://www.ohio.edu/ontologies/manufacturing-capability#GunDrillingFunction -->
-
-    <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#GunDrillingFunction">
-        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#HoleMaking"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.ohio.edu/ontologies/manufacturing-capability#GunDrillingTool -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#GunDrillingTool">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/bearer_of"/>
-                <owl:someValuesFrom rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#GunDrillingFunction"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#DrillingTool"/>
     </owl:Class>
     
@@ -987,10 +974,13 @@
     
 
 
-    <!-- http://www.ohio.edu/ontologies/manufacturing-capability#ManufacturingProcess -->
+    <!-- http://www.ohio.edu/ontologies/manufacturing-capability#MachiningProcess -->
 
-    <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#ManufacturingProcess">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#MachiningProcess">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ActOfManufacturing"/>
+        <obo:IAO_0000115 xml:lang="en">An Act of manufacturing wherein Artifacts or parts of an Artifact are processed using both production machine and production tool, at least one of each kind, and realizes some function, which is conjugally borne by the participating machines and tools.</obo:IAO_0000115>
+        <obo:IAO_0000602 xml:lang="en">forall p (MachiningProcess(p) = Process(p) and exists m (ProductionMachine(m) and participate_in(m,p)) and exists t (ProductionTool(t) and participate_in(t,p)) and exists f (ArtifactFunction(f) and realizes(p,f)))</obo:IAO_0000602>
+        <rdfs:label xml:lang="en">Machining Process</rdfs:label>
     </owl:Class>
     
 
@@ -1013,8 +1003,10 @@
     <!-- http://www.ohio.edu/ontologies/manufacturing-capability#ManufacturingProcessualFunction -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#ManufacturingProcessualFunction">
-        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#ArtifactFunction"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ArtifactFunction"/>
         <owl:disjointWith rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#ManufacturingResourceFunction"/>
+        <obo:IAO_0000115 xml:lang="en">Artifact function, that is borne by more than one combination of manufacturing resources, such as machine, tool, and fixture, and is realized, when these resources conjugally performs a machining process in a controlled (normative) state.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">Maufacturing Processual Function</rdfs:label>
     </owl:Class>
     
 
@@ -1022,7 +1014,9 @@
     <!-- http://www.ohio.edu/ontologies/manufacturing-capability#ManufacturingResourceFunction -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#ManufacturingResourceFunction">
-        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#ArtifactFunction"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ArtifactFunction"/>
+        <obo:IAO_0000115 xml:lang="en">Artifact Function that is borne by a manufacturing resource, such as machine, tool, and fixture..</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">Manufacturing Resource Function</rdfs:label>
     </owl:Class>
     
 
@@ -1069,7 +1063,7 @@
     <!-- http://www.ohio.edu/ontologies/manufacturing-capability#Milling -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#Milling">
-        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#ManufacturingProcess"/>
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#MachiningProcess"/>
     </owl:Class>
     
 
@@ -1426,7 +1420,7 @@
     <!-- http://www.ohio.edu/ontologies/manufacturing-capability#Sawing -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#Sawing">
-        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#ManufacturingProcess"/>
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#MachiningProcess"/>
     </owl:Class>
     
 
@@ -1555,23 +1549,9 @@
     
 
 
-    <!-- http://www.ohio.edu/ontologies/manufacturing-capability#SpadeDrillingFunction -->
-
-    <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#SpadeDrillingFunction">
-        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#HoleMaking"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.ohio.edu/ontologies/manufacturing-capability#SpadeDrillingTool -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#SpadeDrillingTool">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/bearer_of"/>
-                <owl:someValuesFrom rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#SpadeDrillingFunction"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#DrillingTool"/>
     </owl:Class>
     
@@ -1846,7 +1826,7 @@
     <!-- http://www.ohio.edu/ontologies/manufacturing-capability#Turning -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#Turning">
-        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#ManufacturingProcess"/>
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#MachiningProcess"/>
     </owl:Class>
     
 
@@ -1875,23 +1855,9 @@
     
 
 
-    <!-- http://www.ohio.edu/ontologies/manufacturing-capability#TwistDrillingFunction -->
-
-    <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#TwistDrillingFunction">
-        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#HoleMaking"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.ohio.edu/ontologies/manufacturing-capability#TwistDrillingTool -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#TwistDrillingTool">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/bearer_of"/>
-                <owl:someValuesFrom rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#TwistDrillingFunction"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#DrillingTool"/>
     </owl:Class>
     
@@ -2055,6 +2021,27 @@
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#capability">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000016"/>
+        <obo:IAO_0000115 xml:lang="en">A capability &apos;c&apos; is a disposition which inheres in an artifact &apos;a&apos;, such that
+a) demarcates the extent by which some function &apos;f&apos;, inhering in artifact &apos;a&apos;, is realized in some process &apos;p&apos;, a participates in, and
+b) predicts some change of state for &apos;a&apos; or some other object &apos;a’&apos;, which also participate in process &apos;p&apos;.</obo:IAO_0000115>
+        <obo:IAO_0000600 xml:lang="en">What we broadly mean by the statement ‘capability demarcates function’ is that when such function is realized upon completion of a process, the result of the process can be predicted based on the associated capability. Precisely, on completion of a process, the capability of an artifact predicts some change of state for the participant artifact or some other artifact, which also participates in the same process. For example, the spindle of the milling machine realizes spinning function when it is turned on. Some associated capability can demarcate such function by asserting that the maximum speed of the rotation is 2400 rpm. Therefore, if the rotational speed of the mill is increased from 0 to x when the mill is started, we can at least predict that x should be less than or equal to 2400 rpm.</obo:IAO_0000600>
+        <obo:IAO_0000602 xml:lang="en">forall p exists i (process(p) and Interval(i) and occurs(p,i) implies exists a q t_b t_e (participate_in(a,p) and beginAt(i,t_b) and endAt(i,t_e) and not holds(a,q,t_b) and holds(a,q,t_e) and exists c (bearerOf(a,c) and (max(c) &gt;= q) and (q =&lt; min(c)))))</obo:IAO_0000602>
+        <obo:IAO_0000602 xml:lang="en">forall p exists i (process(p) and Interval(i) and occurs(p,i) implies exists a q t_b t_e (participate_in(a,p) and beginAt(i,t_b) and endAt(i,t_e) and not holds(a,q,t_b) and holds(a,q,t_e) and exists c a&apos; (bearerOf(a&apos;,c) and participate(a&apos;, p) and (max(c) &gt;= q) and (q =&lt; min(c)) and (a != a&apos;))))</obo:IAO_0000602>
+        <rdfs:label xml:lang="en">capability</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/ActOfManufacturing -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/ActOfManufacturing"/>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/ArtifactFunction -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/ArtifactFunction">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000034"/>
     </owl:Class>
     
 
@@ -2206,9 +2193,7 @@
 
     <!-- http://www.ohio.edu/ontologies/manufacturing-capability#end-drilling-function -->
 
-    <owl:NamedIndividual rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#end-drilling-function">
-        <rdf:type rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#EndDrillingFunction"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#end-drilling-function"/>
     
 
 
@@ -2316,9 +2301,7 @@
 
     <!-- http://www.ohio.edu/ontologies/manufacturing-capability#twist-drilling-function -->
 
-    <owl:NamedIndividual rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#twist-drilling-function">
-        <rdf:type rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#TwistDrillingFunction"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#twist-drilling-function"/>
     
 
 
@@ -2367,7 +2350,7 @@
         <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000144"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000182"/>
-            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#ManufacturingProcess"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#MachiningProcess"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
@@ -2524,14 +2507,6 @@
             <rdf:Description rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#FaceMillingRoughingTool"/>
             <rdf:Description rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#SideMillingFinishingTool"/>
             <rdf:Description rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#SideMillingRoughingTool"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#GunDrillingFunction"/>
-            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#SpadeDrillingFunction"/>
-            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#TwistDrillingFunction"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
