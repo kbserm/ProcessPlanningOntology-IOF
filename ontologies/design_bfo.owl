@@ -43,6 +43,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/IAO_0000119 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000119"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/IAO_0000600 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000600"/>
@@ -280,10 +286,15 @@
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#ArtifactRepresentation">
         <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ohio.edu/ontologies/design#is_represented_by"/>
-                <owl:someValuesFrom rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Artifact"/>
-            </owl:Restriction>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#Representation"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ohio.edu/ontologies/design#is_represented_by"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Artifact"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#Representation"/>
         <obo:IAO_0000112 xml:lang="en">a painting visioned by a painter</obo:IAO_0000112>
@@ -299,13 +310,18 @@
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#ArtifactSpecification">
         <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ohio.edu/ontologies/design#specifies"/>
-                <owl:someValuesFrom rdf:resource="http://www.ohio.edu/ontologies/design#ArtifactRepresentation"/>
-            </owl:Restriction>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#SpecificationInformationContentEntity"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ohio.edu/ontologies/design#specifies"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ohio.edu/ontologies/design#ArtifactRepresentation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#SpecificationInformationContentEntity"/>
-        <obo:IAO_0000115 xml:lang="en">an information content entity that consists of a set of requirements which specify an Artifact Representation.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">An information content entity that consists of a set of requirements for specifying an Artifact Represntation.</obo:IAO_0000115>
         <obo:IAO_0000602 xml:lang="en">forall x (ArtifactSpecification(x) = SpecificationInformationContentEntity(x) and exist y (ArtifactRepresentation(y) and specifies(x, y)))</obo:IAO_0000602>
         <rdfs:label xml:lang="en">Artifact Specification</rdfs:label>
     </owl:Class>
@@ -316,14 +332,18 @@
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#Assembly">
         <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Artifact"/>
+        <obo:IAO_0000116 xml:lang="en">to be merged with top level definition</obo:IAO_0000116>
+        <rdfs:label xml:lang="en">Assembly</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://www.ohio.edu/ontologies/design#AssemblyComponentAssociation -->
+    <!-- http://www.ohio.edu/ontologies/design#AssemblyComponentMap -->
 
-    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#AssemblyComponentAssociation">
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#AssemblyComponentMap">
         <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#MeronomicalMappingInformationContentEntity"/>
+        <obo:IAO_0000115 xml:lang="en">A Mapping Information Content Entity that represents the specified parthood of one or more Component Specifications to an Assembly Specification.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">Assembly Component Map</rdfs:label>
     </owl:Class>
     
 
@@ -348,8 +368,21 @@
     <!-- http://www.ohio.edu/ontologies/design#AssemblySpecification -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#AssemblySpecification">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#ArtifactSpecification"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ohio.edu/ontologies/design#specifies"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ohio.edu/ontologies/design#AssemblyRepresentation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#ArtifactSpecification"/>
         <owl:disjointWith rdf:resource="http://www.ohio.edu/ontologies/design#ComponentSpecification"/>
+        <obo:IAO_0000115 xml:lang="en">An Artifact Specification that consists of a set of requirements for specifying an Assembly Representation.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">Assembly Specification</rdfs:label>
     </owl:Class>
     
 
@@ -386,10 +419,49 @@
     
 
 
-    <!-- http://www.ohio.edu/ontologies/design#CADRepresentationType -->
+    <!-- http://www.ohio.edu/ontologies/design#BoundaryRepresentation -->
 
-    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#CADRepresentationType">
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#BoundaryRepresentation">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#Representation"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ohio.edu/ontologies/design#is_represented_by"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000006"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#Representation"/>
+        <obo:IAO_0000115 xml:lang="en">a Representation which is_about or is intended to be about the boundary of an Artifact.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">forall x (GeometricalRepresentation(x) -&gt; exists y (SpatialRegion(y) and is_about(x,y)))</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">the contour of the glasses of an eyewear designed by a fashion designer</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">the shape of fuselage of a aeroplane conceptualized by a designer</obo:IAO_0000115>
+        <CommonCoreOntologies:alternative_label>Structural Representation</CommonCoreOntologies:alternative_label>
+        <rdfs:label>Boundary Representation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#BoundarySpecification -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#BoundarySpecification">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#SpecificationInformationContentEntity"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ohio.edu/ontologies/design#specifies"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ohio.edu/ontologies/design#BoundaryRepresentation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#SpecificationInformationContentEntity"/>
+        <obo:IAO_0000115 xml:lang="en">an information content entity that consists of a set of parameters for specifying a Boundary Representation.</obo:IAO_0000115>
+        <obo:IAO_0000602 xml:lang="en">forall x (GeometricalSpecification(x) = SpecificationInformationContentEntity(x) and exist y (GeometricalRepresentation(y) and specifies(x, y)))</obo:IAO_0000602>
+        <rdfs:label xml:lang="en">Boundary Specification</rdfs:label>
     </owl:Class>
     
 
@@ -455,6 +527,18 @@
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#Component">
         <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Artifact"/>
+        <obo:IAO_0000116 xml:lang="en">to be merged with top level definition</obo:IAO_0000116>
+        <rdfs:label xml:lang="en">Component</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/design#ComponentPart -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#ComponentPart">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Artifact"/>
+        <obo:IAO_0000115 xml:lang="en">to be merged with top level definition</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">Component Part</rdfs:label>
     </owl:Class>
     
 
@@ -463,6 +547,8 @@
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#ComponentPartMap">
         <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#MeronomicalMappingInformationContentEntity"/>
+        <obo:IAO_0000115 xml:lang="en">A Mapping Information Content Entity that represents the specified parthood of one or more Part Specifications to a Component Specification.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">Component Part Map</rdfs:label>
     </owl:Class>
     
 
@@ -479,7 +565,20 @@
     <!-- http://www.ohio.edu/ontologies/design#ComponentSpecification -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#ComponentSpecification">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#ArtifactSpecification"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ohio.edu/ontologies/design#specifies"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ohio.edu/ontologies/design#ComponentSpecification"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#ArtifactSpecification"/>
+        <obo:IAO_0000115 xml:lang="en">An Artifact Specification that consists of a set of requirements for specifying a Component Representation.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">Component Specification</rdfs:label>
     </owl:Class>
     
 
@@ -660,7 +759,6 @@
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#DimensionToleranceMap">
         <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#DimensionToleranceMappingInformationContentEntity"/>
-        <owl:disjointWith rdf:resource="http://www.ohio.edu/ontologies/design#FeatureQualityDimensionMap"/>
     </owl:Class>
     
 
@@ -668,7 +766,25 @@
     <!-- http://www.ohio.edu/ontologies/design#DimensionToleranceMappingInformationContentEntity -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#DimensionToleranceMappingInformationContentEntity">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#MappingInformationContentEntity"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ohio.edu/ontologies/design#describes_map_with"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ohio.edu/ontologies/design#ToleranceSpecification"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ohio.edu/ontologies/design#describes_map_for"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.ohio.edu/ontologies/design#DimensionSpecification"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#MappingInformationContentEntity"/>
+        <obo:IAO_0000115 xml:lang="en">An Mapping Information Content Entity that represents the association of some Tolerance Specification to a Dimension Specification.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">Dimension Tolerance Mapping Information Content Entity</rdfs:label>
     </owl:Class>
     
 
@@ -708,7 +824,7 @@
     <!-- http://www.ohio.edu/ontologies/design#EdgeRepresentation -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#EdgeRepresentation">
-        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#GeometricalRepresentation"/>
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#BoundaryRepresentation"/>
     </owl:Class>
     
 
@@ -732,7 +848,7 @@
     <!-- http://www.ohio.edu/ontologies/design#EdgeSpecification -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#EdgeSpecification">
-        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#GeometricalEntitySpecification"/>
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#BoundarySpecification"/>
     </owl:Class>
     
 
@@ -753,18 +869,35 @@
     
 
 
-    <!-- http://www.ohio.edu/ontologies/design#FeatureQualityDimensionMap -->
+    <!-- http://www.ohio.edu/ontologies/design#FeatureDimensionMap -->
 
-    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#FeatureQualityDimensionMap">
-        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#DimensionToleranceMappingInformationContentEntity"/>
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#FeatureDimensionMap">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#FeatureQualityMappingInformationContentEntity"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ohio.edu/ontologies/design#FeatureQualityMap -->
+    <!-- http://www.ohio.edu/ontologies/design#FeatureQualityMappingInformationContentEntity -->
 
-    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#FeatureQualityMap">
-        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#FormFeatureMappingInformationContentEntity"/>
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#FeatureQualityMappingInformationContentEntity">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#MappingInformationContentEntity"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ohio.edu/ontologies/design#describes_map_with"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ohio.edu/ontologies/design#QualitySpecification"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ohio.edu/ontologies/design#describes_map_for"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.ohio.edu/ontologies/design#FeatureSpecification"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#MappingInformationContentEntity"/>
+        <obo:IAO_0000115 xml:lang="en">An Mapping Information Content Entity that represents the association of some Dimention and Tolerance Specifications to a Feature Specification.  .</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -773,13 +906,18 @@
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#FeatureSpecification">
         <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ohio.edu/ontologies/design#specifies"/>
-                <owl:someValuesFrom rdf:resource="http://www.ohio.edu/ontologies/design#FormFeatureRepresentation"/>
-            </owl:Restriction>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#FiatObjectSpecification"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ohio.edu/ontologies/design#specifies"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ohio.edu/ontologies/design#FormFeatureRepresentation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#FiatObjectSpecification"/>
-        <obo:IAO_0000115 xml:lang="en">an information content entity that consists of a set of requirements which specify a Form Feature Representation.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">an information content entity that consists of a set of requirements for specifying a Form Feature Representation.</obo:IAO_0000115>
         <obo:IAO_0000602 xml:lang="en">forall x (FeatureSpecification(x) = SpecificationInformationContentEntity(x) and exist y (FormFeatureRepresentation(y) and specifies(x, y)))</obo:IAO_0000602>
         <CommonCoreOntologies:alternative_label xml:lang="en">Form Feature Specification</CommonCoreOntologies:alternative_label>
         <rdfs:label xml:lang="en">Feature Specification</rdfs:label>
@@ -790,7 +928,7 @@
     <!-- http://www.ohio.edu/ontologies/design#FeatureToleranceMap -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#FeatureToleranceMap">
-        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#FormFeatureMappingInformationContentEntity"/>
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#FeatureQualityMappingInformationContentEntity"/>
     </owl:Class>
     
 
@@ -799,10 +937,15 @@
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#FiatObjectRepresentation">
         <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ohio.edu/ontologies/design#is_represented_by"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
-            </owl:Restriction>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#Representation"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ohio.edu/ontologies/design#is_represented_by"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#Representation"/>
         <obo:IAO_0000112 xml:lang="en">an electoral district planned by a legislator</obo:IAO_0000112>
@@ -818,13 +961,18 @@
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#FiatObjectSpecification">
         <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ohio.edu/ontologies/design#specifies"/>
-                <owl:someValuesFrom rdf:resource="http://www.ohio.edu/ontologies/design#FiatObjectRepresentation"/>
-            </owl:Restriction>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#SpecificationInformationContentEntity"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ohio.edu/ontologies/design#specifies"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ohio.edu/ontologies/design#FiatObjectRepresentation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#SpecificationInformationContentEntity"/>
-        <obo:IAO_0000115 xml:lang="en">an information content entity that consists of a set of requirements which specify a Fiat Object Representation.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">an information content entity that consists of a set of requirements for specifying a Fiat Object Representation.</obo:IAO_0000115>
         <obo:IAO_0000602 xml:lang="en">forall x (FiatObjectSpecification(x) = SpecificationInformationContentEntity(x) and exist y (FiatObjectRepresentation(y) and specifies(x, y)))</obo:IAO_0000602>
         <rdfs:label xml:lang="en">Fiat Object Specification</rdfs:label>
     </owl:Class>
@@ -867,16 +1015,16 @@
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#FormFeature">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
+        <obo:IAO_0000115 xml:lang="en">A Fiat Object Part that is a proper part of an Artifact and bounded by some fiat boundaries, some of which must share a portion with the bona-fide boundary of the artifact.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A set of geometric entities (surfaces, edges, and vertices) together with specifications of the bounding relationship between them and which have engineering function and/or provide assembly aid.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">Form Feature</rdfs:label>
     </owl:Class>
-    
-
-
-    <!-- http://www.ohio.edu/ontologies/design#FormFeatureMappingInformationContentEntity -->
-
-    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#FormFeatureMappingInformationContentEntity">
-        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#MappingInformationContentEntity"/>
-    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.ohio.edu/ontologies/design#FormFeature"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget xml:lang="en">A set of geometric entities (surfaces, edges, and vertices) together with specifications of the bounding relationship between them and which have engineering function and/or provide assembly aid.</owl:annotatedTarget>
+        <obo:IAO_0000119 xml:lang="en">Shah JJ, Rogers MT. Functional requirements and conceptual design of the Feature-Based Modelling System. Comput Eng J [Internet]. 1988;5(1):9.</obo:IAO_0000119>
+    </owl:Axiom>
     
 
 
@@ -916,43 +1064,6 @@
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#GeometricToleranceWithDatumReferenceSpecification">
         <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#ToleranceSpecification"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.ohio.edu/ontologies/design#GeometricalEntitySpecification -->
-
-    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#GeometricalEntitySpecification">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ohio.edu/ontologies/design#specifies"/>
-                <owl:someValuesFrom rdf:resource="http://www.ohio.edu/ontologies/design#GeometricalRepresentation"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#SpecificationInformationContentEntity"/>
-        <obo:IAO_0000115 xml:lang="en">an information content entity that consists of a set of parameters which specify a Geometrical Entity Representation.</obo:IAO_0000115>
-        <obo:IAO_0000602 xml:lang="en">forall x (GeometricalSpecification(x) = SpecificationInformationContentEntity(x) and exist y (GeometricalRepresentation(y) and specifies(x, y)))</obo:IAO_0000602>
-        <rdfs:label xml:lang="en">Geometrical Specification</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.ohio.edu/ontologies/design#GeometricalRepresentation -->
-
-    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#GeometricalRepresentation">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ohio.edu/ontologies/design#is_represented_by"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000006"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#Representation"/>
-        <obo:IAO_0000115 xml:lang="en">a Representation which is_about or is intended to be about a Spatial Region</obo:IAO_0000115>
-        <obo:IAO_0000115 xml:lang="en">forall x (GeometricalRepresentation(x) -&gt; exists y (SpatialRegion(y) and is_about(x,y)))</obo:IAO_0000115>
-        <obo:IAO_0000115 xml:lang="en">the contour of the glasses of an eyewear designed by a fashion designer</obo:IAO_0000115>
-        <obo:IAO_0000115 xml:lang="en">the shape of fuselage of a aeroplane conceptualized by a designer</obo:IAO_0000115>
-        <CommonCoreOntologies:alternative_label>Structural Representation</CommonCoreOntologies:alternative_label>
-        <rdfs:label>Geometrical Representation</rdfs:label>
     </owl:Class>
     
 
@@ -1114,7 +1225,24 @@
     <!-- http://www.ohio.edu/ontologies/design#MappingInformationContentEntity -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#MappingInformationContentEntity">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/RepresentationalInformationContentEntity"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ohio.edu/ontologies/design#describes_map_for"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ohio.edu/ontologies/design#SpecificationInformationContentEntity"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ohio.edu/ontologies/design#describes_map_with"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ohio.edu/ontologies/design#SpecificationInformationContentEntity"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/RepresentationalInformationContentEntity"/>
+        <obo:IAO_0000115 xml:lang="en">A Representational Information Content Entity that represents the mapping between two or more Information Content Entities.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">Mapping Information Content Entity</rdfs:label>
     </owl:Class>
     
 
@@ -1130,15 +1258,25 @@
     <!-- http://www.ohio.edu/ontologies/design#MeronomicalMappingInformationContentEntity -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#MeronomicalMappingInformationContentEntity">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#MappingInformationContentEntity"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ohio.edu/ontologies/design#describes_map_with"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ohio.edu/ontologies/design#ArtifactSpecification"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ohio.edu/ontologies/design#describes_map_for"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.ohio.edu/ontologies/design#ArtifactSpecification"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#MappingInformationContentEntity"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.ohio.edu/ontologies/design#NXCADRepresentationType -->
-
-    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#NXCADRepresentationType">
-        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#CADRepresentationType"/>
+        <obo:IAO_0000115 xml:lang="en">A Mapping Information Content Entity that represents the specified parthood among one or more Artifact Specification</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">Meronomical Mapping Information Content Entity</rdfs:label>
     </owl:Class>
     
 
@@ -1232,14 +1370,6 @@
     
 
 
-    <!-- http://www.ohio.edu/ontologies/design#PartAssociation -->
-
-    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#PartAssociation">
-        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#MeronomicalMappingInformationContentEntity"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.ohio.edu/ontologies/design#PartDesignDocument -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#PartDesignDocument">
@@ -1251,7 +1381,9 @@
     <!-- http://www.ohio.edu/ontologies/design#PartFeatureMap -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#PartFeatureMap">
-        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#FormFeatureMappingInformationContentEntity"/>
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#MeronomicalMappingInformationContentEntity"/>
+        <rdfs:label xml:lang="en">A Mapping Information Content Entity that represents the specified parthood of one or more Feature Specifications to a Part Specification.</rdfs:label>
+        <rdfs:label xml:lang="en">Part Feature Map</rdfs:label>
     </owl:Class>
     
 
@@ -1267,7 +1399,20 @@
     <!-- http://www.ohio.edu/ontologies/design#PartSpecification -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#PartSpecification">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#ArtifactSpecification"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ohio.edu/ontologies/design#specifies"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ohio.edu/ontologies/design#PartSpecification"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#ArtifactSpecification"/>
+        <obo:IAO_0000115 xml:lang="en">An Artifact Specification that consists of a set of requirements for specifying a Part Representation.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">Part Specification</rdfs:label>
     </owl:Class>
     
 
@@ -1315,7 +1460,7 @@
     <!-- http://www.ohio.edu/ontologies/design#PointRepresentation -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#PointRepresentation">
-        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#GeometricalRepresentation"/>
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#BoundaryRepresentation"/>
     </owl:Class>
     
 
@@ -1397,10 +1542,15 @@
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#QualityRepresentation">
         <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ohio.edu/ontologies/design#is_represented_by"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
-            </owl:Restriction>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#Representation"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ohio.edu/ontologies/design#is_represented_by"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#Representation"/>
         <obo:IAO_0000112 xml:lang="en">height of a skyscraper imagined by an architect</obo:IAO_0000112>
@@ -1416,10 +1566,15 @@
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#QualitySpecification">
         <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ohio.edu/ontologies/design#specifies"/>
-                <owl:someValuesFrom rdf:resource="http://www.ohio.edu/ontologies/design#QualityRepresentation"/>
-            </owl:Restriction>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#SpecificationInformationContentEntity"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ohio.edu/ontologies/design#specifies"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ohio.edu/ontologies/design#QualityRepresentation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#SpecificationInformationContentEntity"/>
         <obo:IAO_0000115 xml:lang="en">an information content entity that consists of a symbol that is a measure of the extent, dimensions, and quantity for a Quality Representation.</obo:IAO_0000115>
@@ -1482,10 +1637,15 @@
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#Representation">
         <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/is_about"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
-            </owl:Restriction>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000019"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/is_about"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
         <obo:IAO_0000112 xml:lang="en">&quot;Note that ‘representation’ is thus more comprehensive in scope than ‘ICE,’ even on our proposed more inclusive definition of the latter, since an ICE must in every case be about some portion of reality, where the aboutness in question must always be veridical, so that ‘being about’ is a success verb. A representation, in contrast, is required merely to intend to be about something, and this intention might fail.&quot;(Smith B, Ceusters W. Aboutness: Towards foundations for the information artifact ontology. CEUR Workshop Proceedings. 2015)</obo:IAO_0000112>
@@ -1533,14 +1693,6 @@
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#RunoutSpecification">
         <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#ToleranceSpecification"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.ohio.edu/ontologies/design#STEPRepresentationType -->
-
-    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#STEPRepresentationType">
-        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#CADRepresentationType"/>
     </owl:Class>
     
 
@@ -1596,7 +1748,7 @@
     <!-- http://www.ohio.edu/ontologies/design#SolidRepresentation -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#SolidRepresentation">
-        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#GeometricalRepresentation"/>
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#BoundaryRepresentation"/>
     </owl:Class>
     
 
@@ -1612,7 +1764,7 @@
     <!-- http://www.ohio.edu/ontologies/design#SolidSpecification -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#SolidSpecification">
-        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#GeometricalEntitySpecification"/>
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#BoundarySpecification"/>
     </owl:Class>
     
 
@@ -1625,22 +1777,19 @@
     
 
 
-    <!-- http://www.ohio.edu/ontologies/design#SolidWorKCADRepresentationType -->
-
-    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#SolidWorKCADRepresentationType">
-        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#CADRepresentationType"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.ohio.edu/ontologies/design#SpecificationInformationContentEntity -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#SpecificationInformationContentEntity">
         <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ohio.edu/ontologies/design#specifies"/>
-                <owl:someValuesFrom rdf:resource="http://www.ohio.edu/ontologies/design#Representation"/>
-            </owl:Restriction>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ohio.edu/ontologies/design#specifies"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ohio.edu/ontologies/design#Representation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity"/>
         <obo:IAO_0000600 xml:lang="en">While representation denotes the abstract idea of an entity (conceived by some agent), the specification prescribes how such idea may appear in actuality. For example, 
@@ -1648,7 +1797,7 @@ A specification may inheres in an information bearing artifact, which denotes so
 Multiple instances of specifications may specify a single instance of representation, denoting the evolution of a particular idea (Representaiton). For example, the architect may change the numebr of floors. In this case, the representation of the building remains same, which certain specification changes. By virtue of being an ICE, an instance of specification may migrate from one information bearing artifact to another. For example, she can create a replica of the building along with the sketch of the building, both expressing the same specification.</obo:IAO_0000600>
         <obo:IAO_0000602 xml:lang="en">forall x (SpecificationInformationContentEntity(x) = InformationContentEntity(x) and exist y (Representation(y) and specifies(x, y)))</obo:IAO_0000602>
         <CommonCoreOntologies:alternative_label xml:lang="en">Specification</CommonCoreOntologies:alternative_label>
-        <CommonCoreOntologies:definition xml:lang="en">An information content entity that consists of a set of requirements which specify a Representation.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition xml:lang="en">An information content entity that consists of a set of requirements for specifying a Representation.</CommonCoreOntologies:definition>
         <rdfs:label xml:lang="en">Specification Information Content Entity</rdfs:label>
     </owl:Class>
     
@@ -1737,7 +1886,7 @@ Multiple instances of specifications may specify a single instance of representa
     <!-- http://www.ohio.edu/ontologies/design#SurfaceRepresentation -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#SurfaceRepresentation">
-        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#GeometricalRepresentation"/>
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#BoundaryRepresentation"/>
     </owl:Class>
     
 
@@ -1745,7 +1894,7 @@ Multiple instances of specifications may specify a single instance of representa
     <!-- http://www.ohio.edu/ontologies/design#SurfaceSpecification -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#SurfaceSpecification">
-        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#GeometricalEntitySpecification"/>
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#BoundarySpecification"/>
     </owl:Class>
     
 
@@ -1825,7 +1974,24 @@ Multiple instances of specifications may specify a single instance of representa
     <!-- http://www.ohio.edu/ontologies/design#TopologicalMappingInformationContentEntity -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#TopologicalMappingInformationContentEntity">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#MappingInformationContentEntity"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ohio.edu/ontologies/design#describes_map_with"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ohio.edu/ontologies/design#BoundarySpecification"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ohio.edu/ontologies/design#describes_map_for"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.ohio.edu/ontologies/design#ArtifactSpecification"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#MappingInformationContentEntity"/>
+        <rdfs:label xml:lang="en">Topological Mapping Information Content Entity</rdfs:label>
     </owl:Class>
     
 
@@ -1889,7 +2055,7 @@ Multiple instances of specifications may specify a single instance of representa
     <!-- http://www.ohio.edu/ontologies/design#VertexSpecification -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#VertexSpecification">
-        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#GeometricalEntitySpecification"/>
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#BoundarySpecification"/>
     </owl:Class>
     
 
@@ -2000,38 +2166,6 @@ Multiple instances of specifications may specify a single instance of representa
             <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#PerpendicularitySpecification"/>
             <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#SymmetrySpecification"/>
             <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#TotalRunoutSpecification"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#ArtifactSpecification"/>
-            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#CADRepresentationType"/>
-            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#DimensionSpecification"/>
-            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#FiatObjectSpecification"/>
-            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#GeometricalEntitySpecification"/>
-            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#QualitySpecification"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#ArtifactSpecification"/>
-            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#CADRepresentationType"/>
-            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#DimensionSpecification"/>
-            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#FiatObjectSpecification"/>
-            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#GeometricalEntitySpecification"/>
-            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#QualitySpecification"/>
-            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#ToleranceSpecification"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#ArtifactSpecification"/>
-            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#CADRepresentationType"/>
-            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#FiatObjectSpecification"/>
-            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#GeometricalEntitySpecification"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
@@ -2162,7 +2296,7 @@ Multiple instances of specifications may specify a single instance of representa
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#DimensionToleranceMappingInformationContentEntity"/>
-            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#FormFeatureMappingInformationContentEntity"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#FeatureQualityMappingInformationContentEntity"/>
             <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#MeronomicalMappingInformationContentEntity"/>
             <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#TopologicalMappingInformationContentEntity"/>
         </owl:members>

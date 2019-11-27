@@ -32,6 +32,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/IAO_0000116 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000116"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/IAO_0000600 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000600"/>
@@ -41,6 +47,12 @@
     <!-- http://purl.obolibrary.org/obo/IAO_0000602 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000602"/>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/alternative_label -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/alternative_label"/>
     
 
 
@@ -116,7 +128,7 @@
     <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/expects">
         <rdfs:subPropertyOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/describes"/>
         <owl:inverseOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/is_expected_by"/>
-        <rdfs:domain rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Equation"/>
+        <rdfs:domain rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/expression"/>
     </owl:ObjectProperty>
     
 
@@ -132,7 +144,7 @@
     <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/is_equation_type_of">
         <rdfs:subPropertyOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/inheres_in"/>
         <owl:inverseOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/uses_equation_type"/>
-        <rdfs:domain rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/EquationType"/>
+        <rdfs:domain rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ExpressionType"/>
         <rdfs:range rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/InformationBearingEntity"/>
         <rdfs:label>is equation type of</rdfs:label>
     </owl:ObjectProperty>
@@ -143,7 +155,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/is_expected_by">
         <rdfs:subPropertyOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/described_by"/>
-        <rdfs:range rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Equation"/>
+        <rdfs:range rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/expression"/>
     </owl:ObjectProperty>
     
 
@@ -176,7 +188,7 @@
     <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/uses_equation_type">
         <rdfs:subPropertyOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/bearer_of"/>
         <rdfs:domain rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/InformationBearingEntity"/>
-        <rdfs:range rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/EquationType"/>
+        <rdfs:range rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ExpressionType"/>
         <rdfs:label>uses equation type</rdfs:label>
     </owl:ObjectProperty>
     
@@ -213,6 +225,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/BFO_0000040 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000040"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/BFO_0000144 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000144"/>
@@ -229,6 +247,8 @@
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#AgentialCapability">
         <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#capability"/>
+        <obo:IAO_0000115 xml:lang="en">a capability that is borne by an Agent</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">Agential Capability</rdfs:label>
     </owl:Class>
     
 
@@ -251,7 +271,20 @@
     <!-- http://www.ohio.edu/ontologies/manufacturing-capability#ArtifactCapability -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#ArtifactCapability">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#capability"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/inheres_in"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Artifact"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#capability"/>
+        <obo:IAO_0000115 xml:lang="en">a capability that is borne by an Artifact</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">Artifact Capability</rdfs:label>
     </owl:Class>
     
 
@@ -318,21 +351,6 @@
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#Broaching">
         <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#MachiningProcess"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.ohio.edu/ontologies/manufacturing-capability#CapabilityOfTable -->
-
-    <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#CapabilityOfTable">
-        <rdfs:subClassOf>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#MachineCapability"/>
-                    <rdf:Description rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#NonSelfReferringCapability"/>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -960,7 +978,24 @@
     <!-- http://www.ohio.edu/ontologies/manufacturing-capability#MachineCapability -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#MachineCapability">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#ArtifactCapability"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#demarcates"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#MachiningFunction"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/inheres_in"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/MachineElement"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#ArtifactCapability"/>
+        <obo:IAO_0000115 xml:lang="en">an Artifact Capability that is borne by a Machine Element and demarcates a Machining Function.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">Machine Capability</rdfs:label>
     </owl:Class>
     
 
@@ -968,8 +1003,20 @@
     <!-- http://www.ohio.edu/ontologies/manufacturing-capability#MachiningFunction -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#MachiningFunction">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#ManufacturingResourceFunction"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/inheres_in"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/MachineElement"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#ManufacturingResourceFunction"/>
-        <owl:disjointWith rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#ToolFunction"/>
+        <obo:IAO_0000115 xml:lang="en">Artifact Function that is borne by a Production Machine in virtue of its internal structure, which is composed of mechanical or electrical components or both, intentionally arranged to gain mechanical advantage, when connected to a source of power.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">Machining Function</rdfs:label>
     </owl:Class>
     
 
@@ -988,6 +1035,25 @@
     <!-- http://www.ohio.edu/ontologies/manufacturing-capability#ManufacturingProcessCapability -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#ManufacturingProcessCapability">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#ArtifactCapability"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#demarcates"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#ManufacturingProcessualFunction"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/inheres_in"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/MachineElement"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/inheres_in"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Tool"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -996,6 +1062,8 @@
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">an Artifact Capability, that is borne by a combination of manufacturing resources and demarcates some Manufacturing Processual Function</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">Manufacturing Processual Capability</rdfs:label>
     </owl:Class>
     
 
@@ -1003,10 +1071,29 @@
     <!-- http://www.ohio.edu/ontologies/manufacturing-capability#ManufacturingProcessualFunction -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#ManufacturingProcessualFunction">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/ArtifactFunction"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/inheres_in"/>
+                                <owl:someValuesFrom rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/MachineElement"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/inheres_in"/>
+                                <owl:someValuesFrom rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Tool"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ArtifactFunction"/>
-        <owl:disjointWith rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#ManufacturingResourceFunction"/>
-        <obo:IAO_0000115 xml:lang="en">Artifact function, that is borne by more than one combination of manufacturing resources, such as machine, tool, and fixture, and is realized, when these resources conjugally performs a machining process in a controlled (normative) state.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">Maufacturing Processual Function</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Artifact function, that is borne by a combination of manufacturing resources, such as machine, tool, and fixture, and is realized in a Machining Process, when these resources jointly participate in that process under a suitable arrangement and configuration (normative).</obo:IAO_0000115>
+        <obo:IAO_0000600 xml:lang="en">Manufacturing Processual Function is enabled by a number of Machining or Tooling Function. In other words, Machining and Tooling Functions that are borne by the individual machine and tool, participating in a process, are sub-functions of the Manufacturing Processual Function they jointly bear.Neither the machine nor the tool can realize the Manufacturing Processual Function individually. For example, neither a CNC drill machine or a drill bit can drill a hole alone. The drill machine provides rotational motion to the drill bit and the drill bit cuts by pressing its sharpened edges against the material. Here, the Machining Function of &apos;Spindle Rotation&apos; and Tooling Function of &apos;Chip Removal&apos; enables the Manufacturing Processual Function of &apos;Hole Making&apos; as its sub-functions.</obo:IAO_0000600>
+        <rdfs:label xml:lang="en">Manufacturing Processual Function</rdfs:label>
     </owl:Class>
     
 
@@ -1014,8 +1101,27 @@
     <!-- http://www.ohio.edu/ontologies/manufacturing-capability#ManufacturingResourceFunction -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#ManufacturingResourceFunction">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/ArtifactFunction"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/inheres_in"/>
+                                <owl:someValuesFrom rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/MachineElement"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/inheres_in"/>
+                                <owl:someValuesFrom rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Tool"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ArtifactFunction"/>
-        <obo:IAO_0000115 xml:lang="en">Artifact Function that is borne by a manufacturing resource, such as machine, tool, and fixture..</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">Artifact Function that is borne by a manufacturing resource, such as machine, tool, and fixture in virtue of its structure, intentionally designed for the purpose manufactuirng.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">Manufacturing Resource Function</rdfs:label>
     </owl:Class>
     
@@ -1025,6 +1131,7 @@
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#MaterialAdditionFunction">
         <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#ManufacturingProcessualFunction"/>
+        <rdfs:label xml:lang="en">Material Addition Function</rdfs:label>
     </owl:Class>
     
 
@@ -1048,6 +1155,7 @@
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#MaterialDeformationFunction">
         <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#ManufacturingProcessualFunction"/>
+        <rdfs:label xml:lang="en">Material Deformation Function</rdfs:label>
     </owl:Class>
     
 
@@ -1056,6 +1164,7 @@
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#MaterialRemovalFunction">
         <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#ManufacturingProcessualFunction"/>
+        <rdfs:label xml:lang="en">Material Removal Function</rdfs:label>
     </owl:Class>
     
 
@@ -1316,7 +1425,20 @@
     <!-- http://www.ohio.edu/ontologies/manufacturing-capability#ProductionMachine -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#ProductionMachine">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/MachineElement"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/bearer_of"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#MachiningFunction"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/MachineElement"/>
+        <obo:IAO_0000116 xml:lang="en">To be merged with top level definition</obo:IAO_0000116>
+        <rdfs:label xml:lang="en">Production Machine</rdfs:label>
     </owl:Class>
     
 
@@ -1324,7 +1446,20 @@
     <!-- http://www.ohio.edu/ontologies/manufacturing-capability#ProductionTool -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#ProductionTool">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Tool"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/bearer_of"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#ToolFunction"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Tool"/>
+        <obo:IAO_0000116 xml:lang="en">to be merged with top level definition</obo:IAO_0000116>
+        <rdfs:label xml:lang="en">Production Tool</rdfs:label>
     </owl:Class>
     
 
@@ -1483,6 +1618,21 @@
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#MillingTool"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ohio.edu/ontologies/manufacturing-capability#SizeLimitOfTable -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#SizeLimitOfTable">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#MachineCapability"/>
+                    <rdf:Description rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#NonSelfReferringCapability"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -1740,7 +1890,24 @@
     <!-- http://www.ohio.edu/ontologies/manufacturing-capability#ToolCapability -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#ToolCapability">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#ArtifactCapability"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#demarcates"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#ToolFunction"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/inheres_in"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Tool"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#ArtifactCapability"/>
+        <obo:IAO_0000115 xml:lang="en">an Artifact Capability that is borne by a Production Tool and demarcates a Tool Function.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">Tool Capability</rdfs:label>
     </owl:Class>
     
 
@@ -1779,7 +1946,20 @@
     <!-- http://www.ohio.edu/ontologies/manufacturing-capability#ToolFunction -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#ToolFunction">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#ManufacturingResourceFunction"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/inheres_in"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Tool"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#ManufacturingResourceFunction"/>
+        <obo:IAO_0000115 xml:lang="en">Artifact Function that is borne by a Production Tool in virtue of its shape, which is intentionally designed to deform, remove, move, or hold some material when attached to a Production Machine or used by an agent.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">Tooling Function</rdfs:label>
     </owl:Class>
     
 
@@ -1915,7 +2095,7 @@
     <!-- http://www.ohio.edu/ontologies/manufacturing-capability#WorkpieceHeight -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#WorkpieceHeight">
-        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#CapabilityOfTable"/>
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#SizeLimitOfTable"/>
     </owl:Class>
     
 
@@ -1931,7 +2111,7 @@
     <!-- http://www.ohio.edu/ontologies/manufacturing-capability#WorkpieceLength -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#WorkpieceLength">
-        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#CapabilityOfTable"/>
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#SizeLimitOfTable"/>
         <owl:disjointWith rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#WorkpieceWidth"/>
     </owl:Class>
     
@@ -1940,7 +2120,7 @@
     <!-- http://www.ohio.edu/ontologies/manufacturing-capability#WorkpieceWidth -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#WorkpieceWidth">
-        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#CapabilityOfTable"/>
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#SizeLimitOfTable"/>
     </owl:Class>
     
 
@@ -2020,6 +2200,24 @@
     <!-- http://www.ohio.edu/ontologies/manufacturing-capability#capability -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#capability">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000016"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/inheres_in"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000040"/>
+                                    <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Agent"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000016"/>
         <obo:IAO_0000115 xml:lang="en">A capability &apos;c&apos; is a disposition which inheres in an artifact &apos;a&apos;, such that
 a) demarcates the extent by which some function &apos;f&apos;, inhering in artifact &apos;a&apos;, is realized in some process &apos;p&apos;, a participates in, and
@@ -2035,6 +2233,18 @@ b) predicts some change of state for &apos;a&apos; or some other object &apos;aâ
     <!-- http://www.ontologyrepository.com/CommonCoreOntologies/ActOfManufacturing -->
 
     <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/ActOfManufacturing"/>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/Agent -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Agent"/>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/Artifact -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Artifact"/>
     
 
 
@@ -2064,26 +2274,19 @@ b) predicts some change of state for &apos;a&apos; or some other object &apos;aâ
     
 
 
-    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/Equation -->
-
-    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Equation">
-        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/EquationType -->
-
-    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/EquationType">
-        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DescriptiveInformationContentEntity"/>
-        <rdfs:label>Equation Type</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://www.ontologyrepository.com/CommonCoreOntologies/EquipmentMount -->
 
     <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/EquipmentMount"/>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/ExpressionType -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/ExpressionType">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DescriptiveInformationContentEntity"/>
+        <obo:IAO_0000115 xml:lang="en">A Descriptive Information Content Entity that consists of a set of context-free grammer, either given in a particular notation technique, e.g. BNF or by a well-known label, e.g. MathML.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">Expression Type</rdfs:label>
+    </owl:Class>
     
 
 
@@ -2135,6 +2338,17 @@ b) predicts some change of state for &apos;a&apos; or some other object &apos;aâ
     
 
 
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/expression -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/expression">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity"/>
+        <obo:IAO_0000115 xml:lang="en">A Directive Information Content Entity that prescribes a well-formed mathematical expression.</obo:IAO_0000115>
+        <CommonCoreOntologies:alternative_label xml:lang="en">Mathematical Expression</CommonCoreOntologies:alternative_label>
+        <rdfs:label xml:lang="en">Expression</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -2146,177 +2360,10 @@ b) predicts some change of state for &apos;a&apos; or some other object &apos;aâ
     
 
 
-    <!-- http://www.ohio.edu/ontologies/manufacturing-capability#HAAS-DM-1 -->
-
-    <owl:NamedIndividual rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#HAAS-DM-1">
-        <rdf:type rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#ProductionMachine"/>
-        <CommonCoreOntologies:bearer_of rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#drill-func"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.ohio.edu/ontologies/manufacturing-capability#JET-JTM-1V -->
-
-    <owl:NamedIndividual rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#JET-JTM-1V">
-        <rdf:type rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#ProductionMachine"/>
-        <CommonCoreOntologies:bearer_of rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#mill-func"/>
-        <CommonCoreOntologies:bearer_of rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#vertical-axis-control"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.ohio.edu/ontologies/manufacturing-capability#MAZARK-UN-600-30H -->
-
-    <owl:NamedIndividual rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#MAZARK-UN-600-30H">
-        <rdf:type rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#ProductionMachine"/>
-        <CommonCoreOntologies:bearer_of rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#horizontal-axis-control"/>
-        <CommonCoreOntologies:bearer_of rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#mill-func"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.ohio.edu/ontologies/manufacturing-capability#chip-removal-function -->
-
-    <owl:NamedIndividual rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#chip-removal-function">
-        <rdf:type rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#ChipRemovalFunction"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.ohio.edu/ontologies/manufacturing-capability#drill-func -->
-
-    <owl:NamedIndividual rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#drill-func">
-        <rdf:type rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#DrillingFunction"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.ohio.edu/ontologies/manufacturing-capability#end-drilling-function -->
-
-    <owl:NamedIndividual rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#end-drilling-function"/>
-    
-
-
-    <!-- http://www.ohio.edu/ontologies/manufacturing-capability#finishing -->
-
-    <owl:NamedIndividual rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#finishing">
-        <rdf:type rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#Finishing"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.ohio.edu/ontologies/manufacturing-capability#hole-finishing -->
-
-    <owl:NamedIndividual rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#hole-finishing">
-        <rdf:type rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#HoleFinishing"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.ohio.edu/ontologies/manufacturing-capability#hole-improving -->
-
-    <owl:NamedIndividual rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#hole-improving">
-        <rdf:type rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#HoleImproving"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.ohio.edu/ontologies/manufacturing-capability#hole-making -->
-
-    <owl:NamedIndividual rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#hole-making">
-        <rdf:type rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#HoleMaking"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.ohio.edu/ontologies/manufacturing-capability#hole-starting -->
-
-    <owl:NamedIndividual rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#hole-starting">
-        <rdf:type rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#HoleStarting"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.ohio.edu/ontologies/manufacturing-capability#horizontal-axis-control -->
-
-    <owl:NamedIndividual rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#horizontal-axis-control">
-        <rdf:type rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#HorizontalAxisControl"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.ohio.edu/ontologies/manufacturing-capability#kennametal-solid-carbide -->
-
-    <owl:NamedIndividual rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#kennametal-solid-carbide">
-        <rdf:type rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#ProductionTool"/>
-        <CommonCoreOntologies:bearer_of rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#chip-removal-function"/>
-        <CommonCoreOntologies:bearer_of rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#end-drilling-function"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.ohio.edu/ontologies/manufacturing-capability#mill-func -->
-
-    <owl:NamedIndividual rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#mill-func">
-        <rdf:type rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#MillingFunction"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.ohio.edu/ontologies/manufacturing-capability#niagara-carbide-corner -->
-
-    <owl:NamedIndividual rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#niagara-carbide-corner">
-        <rdf:type rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#ProductionTool"/>
-        <CommonCoreOntologies:bearer_of rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#chip-removal-function"/>
-        <CommonCoreOntologies:bearer_of rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#finishing"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.ohio.edu/ontologies/manufacturing-capability#pocket-making-function -->
-
-    <owl:NamedIndividual rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#pocket-making-function">
-        <rdf:type rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#PocketMakingFunction"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.ohio.edu/ontologies/manufacturing-capability#slot-roughing -->
-
-    <owl:NamedIndividual rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#slot-roughing">
-        <rdf:type rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#SlotRoughing"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.ohio.edu/ontologies/manufacturing-capability#staggered-tooth-cobalt -->
-
-    <owl:NamedIndividual rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#staggered-tooth-cobalt">
-        <rdf:type rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#ProductionTool"/>
-        <CommonCoreOntologies:bearer_of rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#chip-removal-function"/>
-        <CommonCoreOntologies:bearer_of rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#slot-roughing"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.ohio.edu/ontologies/manufacturing-capability#twist-drilling-function -->
-
-    <owl:NamedIndividual rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#twist-drilling-function"/>
-    
-
-
-    <!-- http://www.ohio.edu/ontologies/manufacturing-capability#vertical-axis-control -->
-
-    <owl:NamedIndividual rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#vertical-axis-control">
-        <rdf:type rdf:resource="http://www.ohio.edu/ontologies/manufacturing-capability#VerticalAxisControl"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.ontologyrepository.com/CommonCoreOntologies/JavaMathEquation -->
 
     <owl:NamedIndividual rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/JavaMathEquation">
-        <rdf:type rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/EquationType"/>
+        <rdf:type rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ExpressionType"/>
     </owl:NamedIndividual>
     
 
@@ -2324,7 +2371,7 @@ b) predicts some change of state for &apos;a&apos; or some other object &apos;aâ
     <!-- http://www.ontologyrepository.com/CommonCoreOntologies/JessEquation -->
 
     <owl:NamedIndividual rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/JessEquation">
-        <rdf:type rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/EquationType"/>
+        <rdf:type rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ExpressionType"/>
     </owl:NamedIndividual>
     
 
@@ -2332,7 +2379,7 @@ b) predicts some change of state for &apos;a&apos; or some other object &apos;aâ
     <!-- http://www.ontologyrepository.com/CommonCoreOntologies/SWRLEquation -->
 
     <owl:NamedIndividual rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/SWRLEquation">
-        <rdf:type rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/EquationType"/>
+        <rdf:type rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ExpressionType"/>
     </owl:NamedIndividual>
     
 
@@ -2367,11 +2414,11 @@ b) predicts some change of state for &apos;a&apos; or some other object &apos;aâ
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#AxisOfControl"/>
-            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#CapabilityOfTable"/>
             <rdf:Description rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#CoolantCapacity"/>
             <rdf:Description rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#ElectricalCapability"/>
             <rdf:Description rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#FeedRateCapability"/>
             <rdf:Description rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#PowerLimit"/>
+            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#SizeLimitOfTable"/>
             <rdf:Description rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#SpeedLimit"/>
             <rdf:Description rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#TravelAllowance"/>
         </owl:members>
@@ -2516,14 +2563,6 @@ b) predicts some change of state for &apos;a&apos; or some other object &apos;aâ
             <rdf:Description rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#PolygonalTurning"/>
             <rdf:Description rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#Threading"/>
             <rdf:Description rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#TurnDrilling"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#MachineCapability"/>
-            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#ManufacturingProcessCapability"/>
-            <rdf:Description rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability#ToolCapability"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
