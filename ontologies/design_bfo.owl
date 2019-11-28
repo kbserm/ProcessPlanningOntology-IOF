@@ -10,7 +10,11 @@
      xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
-    <owl:Ontology rdf:about="http://www.ohio.edu/ontologies/design"/>
+    <owl:Ontology rdf:about="http://www.ohio.edu/ontologies/design">
+        <dc:contributor xml:lang="en">Arkopaul Sarkar, Dusan Sormaz</dc:contributor>
+        <rdfs:label xml:lang="en">Product Design Ontology</rdfs:label>
+        <owl:versionInfo xml:lang="en">Version 1.0</owl:versionInfo>
+    </owl:Ontology>
     
 
 
@@ -90,6 +94,7 @@
         <rdfs:subPropertyOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/describes"/>
         <rdfs:domain rdf:resource="http://www.ohio.edu/ontologies/design#MappingInformationContentEntity"/>
         <rdfs:range rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/RepresentationalInformationContentEntity"/>
+        <obo:IAO_0000115>If m1 describes map for i1 then i1 is the subject of the mapping m1.</obo:IAO_0000115>
         <rdfs:label>describes map for</rdfs:label>
     </owl:ObjectProperty>
     
@@ -101,6 +106,7 @@
         <rdfs:subPropertyOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/describes"/>
         <rdfs:domain rdf:resource="http://www.ohio.edu/ontologies/design#MappingInformationContentEntity"/>
         <rdfs:range rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/RepresentationalInformationContentEntity"/>
+        <obo:IAO_0000115>If m1 describes map with i1 then i1 is the terminus of the mapping m1.</obo:IAO_0000115>
         <rdfs:label>describes map with</rdfs:label>
     </owl:ObjectProperty>
     
@@ -145,6 +151,7 @@
         <rdfs:subPropertyOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/represents"/>
         <rdfs:domain rdf:resource="http://www.ohio.edu/ontologies/design#SpecificationInformationContentEntity"/>
         <rdfs:range rdf:resource="http://www.ohio.edu/ontologies/design#Representation"/>
+        <obo:IAO_0000115>If s1 specifies r1 then s1 is a type of Specification Information Content Entity, and r1 is a Representation.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">specifies</rdfs:label>
     </owl:ObjectProperty>
     
@@ -1792,9 +1799,9 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity"/>
-        <obo:IAO_0000600 xml:lang="en">While representation denotes the abstract idea of an entity (conceived by some agent), the specification prescribes how such idea may appear in actuality. For example, 
-A specification may inheres in an information bearing artifact, which denotes some medium for storing the specification.  For example, when an architect conceives an idea of a building, the idea is represented by a representation. Then she can specify the style of the building, number of floors, and type of roof, which are specifications about that representation. Finally she can capture the design of the building in a sketch, which is an information bearing artifact (design:DesignDocument).   
-Multiple instances of specifications may specify a single instance of representation, denoting the evolution of a particular idea (Representaiton). For example, the architect may change the numebr of floors. In this case, the representation of the building remains same, which certain specification changes. By virtue of being an ICE, an instance of specification may migrate from one information bearing artifact to another. For example, she can create a replica of the building along with the sketch of the building, both expressing the same specification.</obo:IAO_0000600>
+        <obo:IAO_0000600 xml:lang="en">While representation denotes the abstract idea of an entity (conceived by some agent), the specification prescribes how such an idea may appear in actuality. For example, 
+A specification may inhere in an information bearing artifact, which denotes some medium for storing the specification.  For example, when an architect conceives an idea of a building, the idea is represented by a representation. Then she can specify the style of the building, number of floors, and type of roof, which are specifications about that representation. Finally she can capture the design of the building in a sketch, which is an information bearing artifact (design:DesignDocument).   
+Multiple instances of specifications may specify a single instance of representation, denoting the evolution of a particular idea (Representation). For example, the architect may change the number of floors. In this case, the representation of the building remains same, which certain specification changes. By virtue of being an ICE, an instance of specification may migrate from one information bearing artifact to another. For example, she can create a replica of the building along with the sketch of the building, both expressing the same specification.</obo:IAO_0000600>
         <obo:IAO_0000602 xml:lang="en">forall x (SpecificationInformationContentEntity(x) = InformationContentEntity(x) and exist y (Representation(y) and specifies(x, y)))</obo:IAO_0000602>
         <CommonCoreOntologies:alternative_label xml:lang="en">Specification</CommonCoreOntologies:alternative_label>
         <CommonCoreOntologies:definition xml:lang="en">An information content entity that consists of a set of requirements for specifying a Representation.</CommonCoreOntologies:definition>
