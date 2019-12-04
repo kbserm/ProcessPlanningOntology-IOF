@@ -4,6 +4,7 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
@@ -12,6 +13,7 @@
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://www.ohio.edu/ontologies/manufacturing-capability">
+        <owl:imports rdf:resource="https://www.industrialontologies.org/core"/>
         <dc:contributor xml:lang="en">Arkopaul Sarkar, Dusan Sormaz</dc:contributor>
         <rdfs:label xml:lang="en">Manufacturing Resource Capability</rdfs:label>
         <owl:versionInfo xml:lang="en">Version 1.0</owl:versionInfo>
