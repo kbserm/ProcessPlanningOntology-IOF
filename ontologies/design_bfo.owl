@@ -581,7 +581,7 @@
                     <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#ArtifactSpecification"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.ohio.edu/ontologies/design#specifies"/>
-                        <owl:someValuesFrom rdf:resource="http://www.ohio.edu/ontologies/design#ComponentSpecification"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ohio.edu/ontologies/design#ComponentRepresentation"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -1398,6 +1398,15 @@
     
 
 
+    <!-- http://www.ohio.edu/ontologies/design#PartRepresentation -->
+
+    <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#PartRepresentation">
+        <rdfs:subClassOf rdf:resource="http://www.ohio.edu/ontologies/design#ArtifactRepresentation"/>
+        <rdfs:label xml:lang="en">Part Representation</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://www.ohio.edu/ontologies/design#PartSolidMap -->
 
     <owl:Class rdf:about="http://www.ohio.edu/ontologies/design#PartSolidMap">
@@ -1415,7 +1424,7 @@
                     <rdf:Description rdf:about="http://www.ohio.edu/ontologies/design#ArtifactSpecification"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.ohio.edu/ontologies/design#specifies"/>
-                        <owl:someValuesFrom rdf:resource="http://www.ohio.edu/ontologies/design#PartSpecification"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ohio.edu/ontologies/design#PartRepresentation"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
